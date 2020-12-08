@@ -42,7 +42,7 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-@app.route('/', methods=['GET', 'POST', 'PUT'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     user_rate = db.session.query(Rating).filter_by(user_id=current_user.__dict__.get('id')).subquery()
     data = Documents.query.outerjoin(user_rate, Documents.id == user_rate.c.document_id).filter(
