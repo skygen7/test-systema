@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if current_user.username %}
+        <h3>User: {{ current_user.username }}</h3>
+    {% endif %}
+    <h3>Upload file:</h3>
+    <form action="" method="post" >
+    <button type="submit" name="submit" value="upload">Upload file</button>
+    </form>
+    <h3>List of documents:</h3>
+    {% for row in docs %}
+        <h4>{{ row.name }}</h4>
+        <form action="document/{{ row.id }}">
+            <input type="submit" value="Alter document">
+        </form>
+        <form action="document/{{ row.id }}/delete">
+            <input type="submit" value="Delete document">
+        </form>
+    {% endfor %}
+{% endblock %}
