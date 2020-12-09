@@ -1,4 +1,13 @@
 {% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
     <p>Upload new file:</p>
     <form action="" method=post enctype=multipart/form-data>
         <p><input type=file name=file></p>

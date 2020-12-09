@@ -93,6 +93,8 @@ def upload_file():
             db.session.commit()
 
             return redirect(url_for('user'))
+        else:
+            flash(f'Error! Unexpected filename extension. Available: {", ".join(ALLOWED_EXTENSIONS)}')
     return render_template('upload_file.html', form=form)
 
 
