@@ -1,0 +1,9 @@
+{% block content %}
+    <h1>Delete document:</h1>
+    <h2>{{ name }}</h2>
+    <h2>Are you absolutely sure?</h2>
+    <form action="" method="post" enctype=multipart/form-data>
+        <input type="submit" value="Yes, delete this document">
+    </form>
+    <a href="{{ url_for('user') }}"><< Back</a>
+{% endblock %}
