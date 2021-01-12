@@ -27,3 +27,6 @@ class DocumentsForm(FlaskForm):
     name = TextAreaField('name')
     body = TextAreaField('description')
     visible = SelectField(choices=[(1, 'Visible'), ('', 'Not visible')], default=1)
+
+
+# some code
